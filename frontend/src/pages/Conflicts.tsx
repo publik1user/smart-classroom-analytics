@@ -1,0 +1,2 @@
+import{useEffect,useState}from'react';import{api}from'../api/client';
+export default function C(){const[l,setL]=useState<any[]>([]);useEffect(()=>{api('/conflicts').then(setL)},[]);return<div><h1 className='text-2xl font-bold mb-4'>Timetable Conflicts ({l.length})</h1>{l.map((c,i)=><div key={i} className='card mb-2 border-l-4 !border-l-red-500'><p className='font-semibold'>{c.type}</p><p className='text-slate-600'>{c.day} — {c.detail}</p></div>)}{!l.length&&<div className='card text-green-600'>No conflicts found</div>}</div>}
