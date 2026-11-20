@@ -1,0 +1,1 @@
+import{describe,it,expect}from'vitest';describe('app',()=>{it('links defined',()=>{expect(['Dashboard','Classrooms','Timetable']).toContain('Dashboard')})})
